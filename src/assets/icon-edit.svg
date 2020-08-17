@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.561" height="17.561" viewBox="0 0 17.561 17.561">
+  <g id="icon_trash_copy" data-name="icon/trash copy" transform="translate(0 -0.001)">
+    <rect id="icon_trash_copy_background" data-name="icon/trash copy background" width="17.561" height="17.561" fill="rgba(0,0,0,0)"/>
+    <g id="Group" transform="translate(1.567 1.708)">
+      <path id="Path" d="M.568,10.289a.567.567,0,0,1-.4-.968L9.321.166a.567.567,0,0,1,.8.8L.969,10.123A.567.567,0,0,1,.568,10.289Z" transform="translate(0 1.367)"/>
+      <path id="Path-2" data-name="Path" d="M.568,10.289a.567.567,0,0,1-.4-.968L9.32.166a.567.567,0,0,1,.8.8L.969,10.123A.566.566,0,0,1,.568,10.289Z" transform="translate(3.056 4.423)"/>
+      <path id="Path-3" data-name="Path" d="M3.624,4.191a.566.566,0,0,1-.4-.166L.166.969a.567.567,0,0,1,.8-.8L4.025,3.222a.567.567,0,0,1-.4.968Z" transform="translate(0 10.521)"/>
+      <path id="Path-4" data-name="Path" d="M3.624,4.191a.566.566,0,0,1-.4-.166L.166.969a.567.567,0,0,1,.8-.8L4.025,3.222a.567.567,0,0,1-.4.968Z" transform="translate(9.154 1.367)"/>
+      <path id="Path-5" data-name="Path" d="M.567,4.191A.568.568,0,0,1,0,3.624V.567a.567.567,0,1,1,1.135,0V3.624A.567.567,0,0,1,.567,4.191Z" transform="translate(0 10.521)"/>
+      <path id="Path-6" data-name="Path" d="M3.624,1.135H.567A.567.567,0,0,1,.567,0H3.624a.567.567,0,0,1,0,1.135Z" transform="translate(0 13.577)"/>
+      <path id="Path-7" data-name="Path" d="M.568,2.5a.567.567,0,0,1-.4-.968L1.533.166a.567.567,0,1,1,.8.8L.969,2.336A.567.567,0,0,1,.568,2.5Z" transform="translate(9.154 0)"/>
+      <path id="Path-8" data-name="Path" d="M.568,2.5a.567.567,0,0,1-.4-.968L1.533.166a.567.567,0,1,1,.8.8L.969,2.335A.566.566,0,0,1,.568,2.5Z" transform="translate(12.211 3.056)"/>
+      <path id="Path-9" data-name="Path" d="M3.6,4.165A.566.566,0,0,1,3.2,4L.166.969a.567.567,0,0,1,.8-.8L4,3.2a.567.567,0,0,1-.4.968Z" transform="translate(10.547 0.026)"/>
+    </g>
+  </g>
+</svg>

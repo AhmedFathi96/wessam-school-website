@@ -1,0 +1,68 @@
+
+.contact_form {
+  padding: 4rem 30px;
+  background: #fff;
+  -webkit-box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.1);
+}
+
+.courses_button{
+  padding: 14px 30px;
+  color: #B09E80 !important;
+  border-color: #B09E80 !important;
+  background-color: transparent !important;
+  border-style: solid;
+  width: 150px;
+  border-width: 2px;
+  border-radius: 5px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2rem;
+  outline: none;
+  transition: 0.4s;
+}
+.courses_button:hover{
+  outline: none;
+  color: #ffffff !important;
+  border-color: #B09E80 !important;
+  background-color: #B09E80 !important;
+}
+
+.cont{
+  font-family: "Lato-medium", sans-serif;
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: 700;
+  color: #040c2c;
+}
+
+.btn{
+  font-size: 16px;
+  border-radius: 4px;
+  color: #B09E80;
+  padding: 14px 38px 14px 42px;
+  font-family: Montserrat,sans-serif;
+  border: 2px solid #B09E80;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn:hover{
+  font-size: 16px;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 14px 38px 14px 42px;
+  font-family: Montserrat,sans-serif;
+  border: 2px solid #B09E80;
+  font-weight: 500;
+  background: #B09E80;
+  box-shadow: none;
+  outline: none;
+}
+.btn:focus{
+  border: 0;
+  outline: none;
+}
+

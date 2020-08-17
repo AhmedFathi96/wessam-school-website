@@ -1,0 +1,30 @@
+.wrapper{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header{
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 72px;
+  margin-bottom: 10px;
+  font-family: "Lato-medium", sans-serif;
+}
+.pre{
+  display: flex;
+  font-size: 18px;
+  color: #ffffff;
+  margin-right: 22px;
+  font-family: "Lato-light", sans-serif;
+}
+.pageName{
+  font-size: 18px;
+  color: #777C81;
+  margin-left: 0.5rem;
+  font-family: "Lato-light", sans-serif;
+}

@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Lato-light';
+  src: url('../src/assets/fonts/HelveticaNeue-Light.woff'); 
+
+  font-family: 'Lato-medium';
+  src: url('../src/assets/fonts/HelveticaNeue-Medium.woff'); 
+
+}
+body {
+  margin: 0;
+  font-family: "Lato-medium", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  
+
+}
+h1 , h2 , h3 , h4 , h5 , h6{
+  font-family: "Lato-medium", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+p , span , div{
+  font-family: "Lato-light", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

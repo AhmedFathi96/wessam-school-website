@@ -81,3 +81,14 @@ ul{
         margin-bottom: 0.5rem;
     }
 }
+
+
+.loading{
+    margin: 25% 50%;
+}
+
+@media only screen and (max-width: 710px){
+    .loading{
+        margin: 79% 38%;
+    }
+}

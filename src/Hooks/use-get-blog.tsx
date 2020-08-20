@@ -5,17 +5,23 @@ import { IBlogPost } from "./types";
 
 export const useGetBlogPosts = () => {
 
-    const [posts, setBlogPosts] = useState<IBlogPost[]>([]);
+    const [BlogPosts, setBlogPosts] = useState<IBlogPost[]>([]);
+    const [BlogPosts_is_loading, setLoading] = useState(false);
+
     useEffect(() => {
         getBlogPostsApi()
         .then(data => {
             setBlogPosts(
             data.data.data
             );
+            setLoading(true);
         })
-        .catch();
+        .catch((err)=>{
+            setLoading(false);
+        });
     }, []);
     return {
-        posts
+        BlogPosts,
+        BlogPosts_is_loading
     };
 };

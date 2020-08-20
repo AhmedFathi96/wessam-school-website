@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as styles from './styles.module.css';
-import { Form, Input, FormGroup, Label, Button } from 'reactstrap';
-import { useCreateContact } from '../../../Hooks/use-create-contact';
+import { Form, Input, FormGroup, Button } from 'reactstrap';
 import { createCreateContactApi } from '../../../Axios/create-contact-api';
 
 
+
 const ContactForm: React.FC= (props) =>{
-    const handleSubmit = (event:any) =>{
+
+	const [val,setVal] = useState(false);
+ 
+	const handleSubmit = (event:any) =>{
 		event.preventDefault();
+		const form = event.target;
+
 		
 		const data = {
 			first_name: event.target.first_name.value,
@@ -17,20 +22,29 @@ const ContactForm: React.FC= (props) =>{
 			message: event.target.message.value,
 		}
 		// const res = useCreateContact(data);
-		// console.log('Data ==>'  , data);
+		console.log('Data ==>'  , event.target);
 		createCreateContactApi(data)
         .then(res => {
-            console.log(res.data)
+			form.reset();
+			setVal(true)
         })
         .catch();
 	}
     return (
         <div className={`${styles.default.wrapper}`}>
-			
-					<Form onSubmit={(event) => handleSubmit(event)} className={styles.default.contact_form}>
-						<div className="section-title text-center mb-5">
-							<h2 className={`title ${styles.default.cont}`}>Contact Form</h2>
+			<Form onSubmit={(event) => handleSubmit(event)} className={styles.default.contact_form}>
+				<div className="section-title text-center mb-5">
+					<h2 className={`title ${styles.default.cont}`}>Contact Form</h2>
+				</div>
+				{
+					val && <div className="section-title text-center mb-5">
+							<span style={{fontSize: '25px',color:'#B09E80'}}>Thank you for contacting us</span>
 						</div>
+	
+				}
+				{
+					!val && 
+					<>
 						<div className="row mb-4">
 							<div className="col-md-6 mb-4 mb-md-0">
 								<FormGroup>
@@ -45,19 +59,23 @@ const ContactForm: React.FC= (props) =>{
 						</div>
 
 						<FormGroup>
-                            <Input type="email" id="email" name="email" className="form-control" style={{height: "3rem"}} placeholder="Email" required />
-                        </FormGroup>
-                        <FormGroup>
-                            <Input type="text" id="phone" name="phone" className="form-control" style={{height: "3rem"}} placeholder="Phone Number"  required />
-                        </FormGroup>
+							<Input type="email" id="email" name="email" className="form-control" style={{height: "3rem"}} placeholder="Email" required />
+						</FormGroup>
+						<FormGroup>
+							<Input type="text" id="phone" name="phone" className="form-control" style={{height: "3rem"}} placeholder="Phone Number"  required />
+						</FormGroup>
 						<FormGroup>
 							<Input type="textarea" className="form-control" id="message" name="message" rows={5} cols={3} placeholder="Message" required />
-                        </FormGroup>
-                        <br />
-                        <FormGroup>
-                            <Button className={styles.default.courses_button} type="submit">Save</Button>
-                        </FormGroup>
-                    </Form>
+						</FormGroup>
+						<br />
+						<FormGroup>
+							<Button className={styles.default.courses_button} type="submit">Save</Button>
+						</FormGroup>
+					</>
+				}
+				
+			</Form>
+
 			
 		</div>
 

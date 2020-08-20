@@ -22,7 +22,7 @@ const SingleBlogCard: React.FC<IProps> = (props) =>{
     return (
             <div className={`${styles.default.blog_card} ${styles.default.blog_card_blog}`} onMouseLeave={handleInactive} onMouseEnter={handleActive}>
                 <div className={`${styles.default.blog_card_image}`}>
-                    <img className={styles.default.img} src={`http://localhost:5026/api/blog/get-blog-post-image/${blog._id}/view`} /> 
+                    <img className={styles.default.img} src={` http://localhost:5026/api/blog/get-blog-post-image/${blog._id}/view`} /> 
                     <div className={`${styles.default.post_date} ${active?styles.default.post_date_active:styles.default.post_date_inactive}`}>{date}</div>
                 </div>
                 <div className={styles.default.content}>

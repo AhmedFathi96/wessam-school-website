@@ -6,16 +6,22 @@ import { IGallery } from "./types";
 export const useGetGallery = () => {
 
     const [gallery, setGallery] = useState<IGallery[]>([]);
+    const [gallery_is_loading, setLoading] = useState(false);
+
     useEffect(() => {
         getGalleryApi()
         .then(data => {
             setGallery(
             data.data.data
             );
+            setLoading(true)
         })
-        .catch();
+        .catch(()=>{
+            setLoading(false)
+        });
     }, []);
     return {
-        gallery
+        gallery,
+        gallery_is_loading
     };
 };

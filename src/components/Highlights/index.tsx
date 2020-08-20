@@ -5,13 +5,16 @@ import HomeGallery from './Gallery';
 import Footer from '../Footer';
 import Header from '../Header';
 import { useGetGallery } from '../../Hooks/use-get-gallery';
+import Loader from 'react-loader-spinner';
+import { useGetPagesHeaders } from '../../Hooks/use-get-page-headers';
 
 
 const HighlightsPage: React.FC = (props) =>{
     const [isActive, setIsActive] = useState(false);
     const [topPage, setTopPage] = useState<{}>();
     const [wrapRef, setWrapRef] = useState<HTMLDivElement>();
-    const {gallery} = useGetGallery();
+    const {gallery,gallery_is_loading} = useGetGallery();
+    const {PagesHeaders,PagesHeaders_is_loading} = useGetPagesHeaders();
 
     useEffect(()=>{
         window.addEventListener('scroll', handleScroll);
@@ -29,7 +32,7 @@ const HighlightsPage: React.FC = (props) =>{
     }
     
     const data = Array.from(gallery, x => ({
-        src: `http://localhost:5026/api/gallery/website-get-gallery-image/${x._id}/view`,
+        src: ` http://localhost:5026/api/gallery/website-get-gallery-image/${x._id}/view`,
         width: x.width_ration,
         height: x.height_ration,
         title: 'test image'
@@ -42,13 +45,26 @@ const HighlightsPage: React.FC = (props) =>{
     
     return (
         <div className={`${styles.default.wrapper}`}>
-            <div ref={setWrapRefHandler}>
-                <NavbarComponent active={isActive} />
-                <Header page_name="Highlights" page_background_img={require('../../assets/breadcrumb-bg.jpg')} />
-                <HomeGallery photos={data} />
+            {
+                (gallery_is_loading && PagesHeaders_is_loading)?
+                    <div ref={setWrapRefHandler}>
+                        <NavbarComponent active={isActive} />
+                        <Header page_name="Highlights" page_background_img="http://localhost:5026/api/pages/view-highlights-page-cover-image" />
+                        <HomeGallery photos={data} header={PagesHeaders[0].highlights_header} text={PagesHeaders[0].highlights_text} />
 
-                <Footer />
-            </div>
+                        <Footer />
+                    </div>
+                    :
+                    <div className={styles.default.loading}>
+                        <Loader
+                            type="Puff"
+                            color="#B09E80"
+                            height={100}
+                            width={100}
+                        />
+                    </div>
+            }
+        
         </div>
     );
 }

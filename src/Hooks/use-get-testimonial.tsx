@@ -6,16 +6,22 @@ import { ITestimonial } from "./types";
 export const useGetTestimonials = () => {
 
     const [testimonials, setTestimonial] = useState<ITestimonial[]>([]);
+    const [testimonial_is_loading, setLoading] = useState(false);
+
     useEffect(() => {
         getTestimonialsApi()
         .then(data => {
             setTestimonial(
             data.data.data
             );
+            setLoading(true)
         })
-        .catch();
+        .catch(()=>{
+            setLoading(false)
+        });
     }, []);
     return {
-        testimonials
+        testimonials,
+        testimonial_is_loading
     };
 };

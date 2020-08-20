@@ -6,16 +6,21 @@ import { ISlider } from "./types";
 export const useGetSliders = () => {
 
     const [sliders, setSliders] = useState<ISlider[]>([]);
+    const [slider_is_loading, setLoading] = useState(false);
     useEffect(() => {
         getSlidersApi()
         .then(data => {
             setSliders(
             data.data.data
             );
+            setLoading(true);
         })
-        .catch();
+        .catch(err => {
+            setLoading(false);
+        });
     }, []);
     return {
-        sliders
+        sliders,
+        slider_is_loading
     };
 };

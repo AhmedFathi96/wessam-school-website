@@ -11,8 +11,11 @@ import HomeContact from './Contact';
 import { useGetAbout } from '../../Hooks/use-get-about';
 import { useGetSliders } from '../../Hooks/use-get-sliders';
 import { useGetGallery } from '../../Hooks/use-get-gallery';
-import { useGetBlogPosts } from '../../Hooks/use-get-blog-posts';
+// import { useGetBlogPosts } from '../../Hooks/use-get-page-headersge-headers';
 import { useGetTestimonials } from '../../Hooks/use-get-testimonial';
+import Loader from 'react-loader-spinner'
+import { useGetBlogPosts } from '../../Hooks/use-get-blog';
+
 
 
 export const convertDate = (time:string) =>{
@@ -53,13 +56,13 @@ const HomePage: React.FC = (props) =>{
     }
 
 
-    const {testimonials} = useGetTestimonials();
-    const {about}        = useGetAbout();
-    const {sliders}      = useGetSliders();
-    const {gallery}      = useGetGallery();
-    const {posts}        = useGetBlogPosts();
+    const {testimonials,testimonial_is_loading} = useGetTestimonials();
+    const {about,about_is_loading}        = useGetAbout();
+    const {sliders,slider_is_loading}      = useGetSliders();
+    const {gallery,gallery_is_loading}      = useGetGallery();
+    const {BlogPosts,BlogPosts_is_loading}        = useGetBlogPosts();
     const data = Array.from(gallery, x => ({
-        src: `http://localhost:5026/api/gallery/website-get-gallery-image/${x._id}/view`,
+        src: ` http://localhost:5026/api/gallery/website-get-gallery-image/${x._id}/view`,
         width: x.width_ration,
         height: x.height_ration,
         title: 'test image'
@@ -71,16 +74,29 @@ const HomePage: React.FC = (props) =>{
 
     return (
         <div className={`${styles.default.wrapper}`}>
-            <div ref={setWrapRefHandler}>
-                <NavbarComponent active={isActive} />
-                <CustomCarousel sliders={sliders} />
-                <HomeAbout about={about} />
-                <HomeGallery photos={data}  />       
-                <HomeBlog posts={posts} />         
-                <Testimonial testimonial={testimonials} /> 
-                <HomeContact />
-                <Footer />
-            </div>
+            {
+                (testimonial_is_loading && about_is_loading && slider_is_loading && gallery_is_loading && BlogPosts_is_loading)?
+                    <div ref={setWrapRefHandler}>
+                        <NavbarComponent active={isActive} />
+                        <CustomCarousel sliders={sliders} />
+                        <HomeAbout about={about} />
+                        <HomeGallery photos={data}  />       
+                        <HomeBlog posts={BlogPosts} />         
+                        <Testimonial testimonial={testimonials} /> 
+                        <HomeContact />
+                        <Footer />
+                    </div>
+                    :
+                    <div className={styles.default.loading}>
+                        <Loader
+                            type="Puff"
+                            color="#B09E80"
+                            height={100}
+                            width={100}
+                        />
+                    </div>
+            }
+            
         </div>
     );
 }

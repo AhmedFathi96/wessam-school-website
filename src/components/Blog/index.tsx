@@ -4,7 +4,9 @@ import NavbarComponent from '../navbar';
 import Footer from '../Footer';
 import Header from '../Header';
 import Blog from './Blog/HomeBlog';
-import { useGetBlogPosts } from '../../Hooks/use-get-blog-posts';
+import { useGetBlogPosts } from '../../Hooks/use-get-blog';
+import Loader from 'react-loader-spinner';
+import { useGetPagesHeaders } from '../../Hooks/use-get-page-headers';
 
 
 const BlogPage: React.FC = (props) =>{
@@ -30,18 +32,33 @@ const BlogPage: React.FC = (props) =>{
     const setWrapRefHandler = (ref:any) => {
         setWrapRef(ref)
     }
-    const {posts} = useGetBlogPosts();
+    const {BlogPosts,BlogPosts_is_loading} = useGetBlogPosts();
+    const {PagesHeaders,PagesHeaders_is_loading} = useGetPagesHeaders();
 
     
     return (
         <div className={`${styles.default.wrapper}`}>
-            <div ref={setWrapRefHandler}>
-                <NavbarComponent active={isActive} />
-                <Header page_name="Blog" page_background_img={require('../../assets/breadcrumb-bg.jpg')} />
-                <Blog posts={posts} />
+            
 
-                <Footer />
-            </div>
+            {
+                (BlogPosts_is_loading) && PagesHeaders_is_loading?
+                    <div ref={setWrapRefHandler}>
+                        <NavbarComponent active={isActive} />
+                        <Header page_name="Blog" page_background_img="http://localhost:5026/api/pages/view-blog-page-cover-image" />
+                        <Blog posts={BlogPosts} header={PagesHeaders[0].blog_header} text={PagesHeaders[0].blog_text} />
+
+                        <Footer />
+                    </div>
+                    :
+                    <div className={styles.default.loading}>
+                        <Loader
+                            type="Puff"
+                            color="#B09E80"
+                            height={100}
+                            width={100}
+                        />
+                    </div>
+            }
         </div>
     );
 }

@@ -7,7 +7,6 @@ import {
     CarouselCaption
 } from 'reactstrap';
 import * as styles from './styles.module.sass';
-import { useGetSliders } from '../../../Hooks/use-get-sliders';
 import { ISlider } from '../../../Hooks/types';
 
 
@@ -41,7 +40,7 @@ const CustomCarousel = (props:{sliders:ISlider[]}) => {
             onExited={() => setAnimating(false)}
             className={styles.default.sliderImageWrapper}
         >
-            <img src={`http://localhost:5026/api/slider/website-get-slider-image/${item._id}/view`}  />
+            <img src={` http://localhost:5026/api/slider/website-get-slider-image/${item._id}/view`}  />
             <CarouselCaption style={{display: 'block !important'}} className={styles.default.carouselCaption} captionText={""} captionHeader={item.caption} />
         </CarouselItem>
         );

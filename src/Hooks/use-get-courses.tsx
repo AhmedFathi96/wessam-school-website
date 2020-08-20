@@ -6,16 +6,22 @@ import { ICourse } from "./types";
 export const useGetCourses = () => {
 
     const [courses, setCourses] = useState<ICourse[]>([]);
+    const [courses_is_loading, setLoading] = useState(false);
+
     useEffect(() => {
         getCoursesApi()
         .then(data => {
             setCourses(
             data.data.data
             );
+            setLoading(true)
         })
-        .catch();
+        .catch(()=>{
+            setLoading(false)
+        });
     }, []);
     return {
-        courses
+        courses,
+        courses_is_loading
     };
 };

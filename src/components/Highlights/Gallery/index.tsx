@@ -5,10 +5,12 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 
 interface IProps{
     photos: any[];
+    header:string;
+    text:string;
 }
 
 const HomeGallery: React.FC<IProps> = (props) =>{
-    const {photos} = props;
+    const {photos,header,text} = props;
 
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -25,8 +27,8 @@ const HomeGallery: React.FC<IProps> = (props) =>{
     return (
         <div className={`${styles.default.wrapper}`}>
             <div className={styles.default.headerWrapper}>
-                <p className={styles.default.header}>My Gallery</p>
-                <p className={styles.default.subHeader}>I love what I do. I take great pride in what I do.</p>
+                <p className={styles.default.header}>{header}</p>
+                <p className={styles.default.subHeader}>{text}</p>
                 <span className={styles.default.line} />
             </div>
             <Gallery photos={photos} onClick={openLightbox} />

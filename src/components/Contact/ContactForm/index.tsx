@@ -22,7 +22,7 @@ const ContactForm: React.FC= (props) =>{
 			message: event.target.message.value,
 		}
 		// const res = useCreateContact(data);
-		console.log('Data ==>'  , event.target);
+		// console.log('Data ==>'  , event.target);
 		createCreateContactApi(data)
         .then(res => {
 			form.reset();

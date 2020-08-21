@@ -11,7 +11,7 @@ export const useGetInfo = () => {
     useEffect(() => {
         getInfoApi()
         .then(data => {
-            console.log('Data ====>' , data.data.data[0])
+            // console.log('Data ====>' , data.data.data[0])
             setInfo(
                 data.data.data[0]
             );

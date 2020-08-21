@@ -46,7 +46,7 @@ const TestimonialsPage: React.FC<IProps> = (props) => {
                                                 <div className={styles.default.itemWrapper}>
                                                     <div className='mx-auto mb-4'>
                                                         <img
-                                                            src={` http://localhost:5026/api/testimonial/get-testimonial-image/${item._id}/view`}
+                                                            src={` api/testimonial/get-testimonial-image/${item._id}/view`}
                                                             className='rounded-circle img-fluid'
                                                             alt=''
                                                         />

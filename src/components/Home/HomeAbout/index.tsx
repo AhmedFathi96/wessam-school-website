@@ -30,7 +30,7 @@ const HomeAbout: React.FC<IAboutProps> = (props) =>{
                                 
                             </div>
                             <div className={styles.default.leftImage}>
-                                <img src={` http://localhost:5026/api/about/website-get-about-image/${item._id}/view`} />
+                                <img src={` api/about/website-get-about-image/${item._id}/view`} />
                             </div>
                         </div>
                     </div>

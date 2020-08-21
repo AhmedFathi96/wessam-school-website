@@ -62,14 +62,14 @@ const HomePage: React.FC = (props) =>{
     const {gallery,gallery_is_loading}      = useGetGallery();
     const {BlogPosts,BlogPosts_is_loading}        = useGetBlogPosts();
     const data = Array.from(gallery, x => ({
-        src: ` http://localhost:5026/api/gallery/website-get-gallery-image/${x._id}/view`,
+        src: ` api/gallery/website-get-gallery-image/${x._id}/view`,
         width: x.width_ration,
         height: x.height_ration,
         title: 'test image'
     }))
 
     React.useEffect(() =>{
-        console.log('Testimonial' ,testimonials)
+        // console.log('Testimonial' ,testimonials)
     } ,[])
 
     return (

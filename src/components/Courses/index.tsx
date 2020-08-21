@@ -41,7 +41,7 @@ const Courses: React.FC = (props) =>{
                 (courses_is_loading && PagesHeaders_is_loading)?
                 <div ref={setWrapRefHandler}>   
                     <NavbarComponent active={isActive} />
-                    <Header page_name="Courses" page_background_img="http://localhost:5026/api/pages/view-courses-page-cover-image" />
+                    <Header page_name="Courses" page_background_img="api/pages/view-courses-page-cover-image" />
                     <div className={`${styles.default.wrapper}`}>
                         <div className="container">
                             <div className={styles.default.headerWrapper}>

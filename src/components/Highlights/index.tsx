@@ -32,7 +32,7 @@ const HighlightsPage: React.FC = (props) =>{
     }
     
     const data = Array.from(gallery, x => ({
-        src: ` http://localhost:5026/api/gallery/website-get-gallery-image/${x._id}/view`,
+        src: ` api/gallery/website-get-gallery-image/${x._id}/view`,
         width: x.width_ration,
         height: x.height_ration,
         title: 'test image'
@@ -49,7 +49,7 @@ const HighlightsPage: React.FC = (props) =>{
                 (gallery_is_loading && PagesHeaders_is_loading)?
                     <div ref={setWrapRefHandler}>
                         <NavbarComponent active={isActive} />
-                        <Header page_name="Highlights" page_background_img="http://localhost:5026/api/pages/view-highlights-page-cover-image" />
+                        <Header page_name="Highlights" page_background_img="api/pages/view-highlights-page-cover-image" />
                         <HomeGallery photos={data} header={PagesHeaders[0].highlights_header} text={PagesHeaders[0].highlights_text} />
 
                         <Footer />

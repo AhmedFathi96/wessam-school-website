@@ -44,7 +44,7 @@ const BlogPage: React.FC = (props) =>{
                 (BlogPosts_is_loading) && PagesHeaders_is_loading?
                     <div ref={setWrapRefHandler}>
                         <NavbarComponent active={isActive} />
-                        <Header page_name="Blog" page_background_img="http://localhost:5026/api/pages/view-blog-page-cover-image" />
+                        <Header page_name="Blog" page_background_img="api/pages/view-blog-page-cover-image" />
                         <Blog posts={BlogPosts} header={PagesHeaders[0].blog_header} text={PagesHeaders[0].blog_text} />
 
                         <Footer />

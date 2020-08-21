@@ -8,7 +8,7 @@ interface IProps{
 }
 const getWindowDimensions =() => {
     const { innerWidth: width, innerHeight: height } = window;
-    console.log('top' , width)
+    // console.log('top' , width)
     return {
         width,
         height
@@ -34,7 +34,7 @@ const NavbarComponent: React.FC<IProps> = (props) =>{
         <div className={`${styles.default.nav} ${props.active?styles.default.affix:''}  ${toggle?styles.default.activeBack:''}`}>
             <div className={`${styles.default.container} ${styles.default.wrapper}`}>
                 <div className={styles.default.logo}>
-                    <a href="#" className={styles.default.navLogo}><img className={`${styles.default.logoImg}`} src={require('../../assets/250_50.png')} /></a>
+                    <a href="#" className={styles.default.navLogo}><img className={`${styles.default.logoImg}`} width="130px" src={require('../../assets/250_50.png')} /></a>
                 </div>  
                 <div className={`${styles.default.main_list} ${toggle?styles.default.show_list:''}`}>
 

@@ -43,7 +43,7 @@ const ContactPage: React.FC= (props) =>{
                 (PagesHeaders_is_loading && Info_is_loading)?
                 <div ref={setWrapRefHandler}>
                     <NavbarComponent active={isActive} />
-                    <Header page_name="Contact-us" page_background_img="http://localhost:5026/api/pages/view-contact-page-cover-image" />
+                    <Header page_name="Contact-us" page_background_img="api/pages/view-contact-page-cover-image" />
                     <div className={`${styles.default.page_wrapper}`}>
                         <div className={styles.default.headerWrapper}>
                             <p className={styles.default.header}>{PagesHeaders[0].contact_header}</p>

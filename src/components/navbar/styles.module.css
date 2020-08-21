@@ -15,7 +15,9 @@
     text-decoration: none;
     color: #fff;
     font-size: 1.3rem;
+    width: 133px;
 }
+
 .wrapper{
     padding: 0 2rem;
     display: flex;

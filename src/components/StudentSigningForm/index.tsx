@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as styles from './styles.module.css';
-import { Form, Input, FormGroup, Button } from 'reactstrap';
+import { Form, Input, FormGroup, Button, Label } from 'reactstrap';
 import { createCreateContactApi } from '../../Axios/create-contact-api';
 import { NavLink } from 'react-router-dom';
 import { createStudentApi } from '../../Axios/create-student-api';
@@ -50,12 +50,15 @@ const StudentSigningForm: React.FC<IProps>= (props) =>{
 						
 							<>
 								<FormGroup>
+									<Label> Student First Name*</Label>
 									<Input type="text" id="name" name="name" className="form-control" style={{height: "3rem"}} placeholder="Ex: Ahmed" required />
 								</FormGroup>
 								<FormGroup>
+									<Label> Parent Name*</Label>
 									<Input type="text" id="parent_name" name="parent_name" className="form-control" style={{height: "3rem"}} placeholder="Ex: Mohamed" required />
 								</FormGroup>
 								<FormGroup>
+									<Label>Select Your Grade*</Label>
 									<Input type="select" name="grade" id="grade"  style={{height: "3rem"}}	required>
 										<option value="default">Select your grade</option>
 										<option value="grade1">Grade 1</option>
@@ -66,9 +69,11 @@ const StudentSigningForm: React.FC<IProps>= (props) =>{
 									</Input>
 								</FormGroup>
 								<FormGroup>
+								<Label>Email*</Label>
 								<Input type="text" name="email" placeholder="Ex: example@info.com" id="email" style={{height: "3rem"}} required/>
 							</FormGroup>
 							<FormGroup>
+							<Label> Select a course*</Label>
 								<Input type="select" name="course" id="course" style={{height: "3rem"}} required>
 									<option value="default">Select your course</option>
 									{
@@ -77,12 +82,15 @@ const StudentSigningForm: React.FC<IProps>= (props) =>{
 								</Input>
 							</FormGroup>
 							<FormGroup>
+								<Label>Student's Phone*</Label>
 								<Input type="text" name="student_phone" placeholder="Ex: 01009839804" id="student_phone" style={{height: "3rem"}} required/>
 							</FormGroup>
 							<FormGroup>
+								<Label>Parent's Phone*</Label>
 								<Input type="text" name="parent_phone" placeholder="Ex: 01009839804" id="parent_phone" style={{height: "3rem"}} required/>
 							</FormGroup>
 							<FormGroup>
+								<Label>Address*</Label>
 								<Input type="text" name="address" placeholder="Ex: Nasr city,Cairo" id="address" style={{height: "3rem"}} required/>
 							</FormGroup>
 								<br />

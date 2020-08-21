@@ -22,3 +22,19 @@ p {
     margin-top: 0;
     margin-bottom: 0rem;
 }
+
+.modal-dialog {
+    max-width: 1024px !important;
+    margin: 6.75rem auto !important;
+}
+@media screen and (max-width:768px) {
+    .blog_card_blog {
+        margin: 0;
+        cursor: pointer;
+    }
+    .modal-dialog {
+        max-width: 600px;
+        margin: 1.75rem auto;
+    }
+}
+

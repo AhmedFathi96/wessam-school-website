@@ -1,0 +1,122 @@
+
+.contact_form {
+  padding: 4rem 30px;
+  background: #fff;
+  width: 60%;
+  margin: 5rem auto;
+  -webkit-box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.courses_button{
+  padding: 14px 0 !important;
+  color: #B09E80 !important;
+  margin-left: 1rem;
+  border-color: #B09E80 !important;
+  background-color: transparent !important;
+  border-style: solid;
+  width: 200px;
+  border-width: 2px;
+  border-radius: 5px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2rem;
+  outline: none;
+  transition: 0.4s;
+}
+.courses_button:hover{
+  outline: none;
+  color: #ffffff !important;
+  border-color: #B09E80 !important;
+  background-color: #B09E80 !important;
+}
+
+.back_button{
+  padding: 14px 20px !important;
+  color: #ffffff !important;
+  border-color: #B09E80 !important;
+  background-color: #B09E80 !important;
+  border-style: solid;
+  width: 200px;
+  font-weight: 400;
+  margin: 0 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  outline: none;
+  transition: 0.4s;
+}
+.back_button:hover{
+  outline: none;
+  color: #B09E80 !important;
+  border-color: #B09E80 !important;
+  background-color: transparent !important;
+}
+.cont{
+  font-family: "Lato-medium", sans-serif;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 500;
+  color: #040c2c;
+}
+
+.btn{
+  font-size: 16px;
+  border-radius: 4px;
+  color: #B09E80;
+  padding: 14px 38px 14px 42px;
+  font-family: Montserrat,sans-serif;
+  border: 2px solid #B09E80;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn:hover{
+  font-size: 16px;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 14px 38px 14px 42px;
+  font-family: Montserrat,sans-serif;
+  border: 2px solid #B09E80;
+  font-weight: 500;
+  background: #B09E80;
+  box-shadow: none;
+  outline: none;
+}
+.btn:focus{
+  border: 0;
+  outline: none;
+}
+
+
+
+@media only screen and (max-width: 710px){
+  .contact_form {
+    padding: 4rem 30px;
+    background: #fff;
+    width: 96%;
+    margin: 2rem auto;
+    -webkit-box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.1);
+  }
+  .courses_button, .back_button{
+    width: 150px ;
+    padding: 10px !important;
+  }
+}
+
+.loading{
+  margin: 25% 50%;
+}
+
+@media only screen and (max-width: 710px){
+  .loading{
+      margin: 79% 38%;
+  }
+}

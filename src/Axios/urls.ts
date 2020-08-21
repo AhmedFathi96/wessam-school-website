@@ -1,12 +1,15 @@
 const production = 'https://wessammohamed.com/';
 const local = 'http://localhost:5026/';
 
-export const getSlidersURL = `${production}api/slider/website-get-sliders`;
-export const getAboutURL = `${production}api/about/website-get-about`;
-export const getGalleryURL = `${production}api/gallery/website-get-gallery-images`;
-export const getPostsURL = `${production}api/blog/website-get-blog-posts`;
-export const getTestimonialsURL = `${production}api/testimonial/website-get-testimonials`;
-export const createContactURL = `${production}api/contact/website-create-contact`;
-export const createCoursesURL = `${production}api/courses/website-get-courses`;
-export const getPagesHeadersURL = `${production}api/pages/website-get-pages-posts`;
-export const getInfoURL = `${production}api/info/website-get-info`
+const baseURL = production
+
+export const getSlidersURL = `${baseURL}api/slider/website-get-sliders`;
+export const getAboutURL = `${baseURL}api/about/website-get-about`;
+export const getGalleryURL = `${baseURL}api/gallery/website-get-gallery-images`;
+export const getPostsURL = `${baseURL}api/blog/website-get-blog-posts`;
+export const getTestimonialsURL = `${baseURL}api/testimonial/website-get-testimonials`;
+export const createContactURL = `${baseURL}api/contact/website-create-contact`;
+export const createCoursesURL = `${baseURL}api/courses/website-get-courses`;
+export const createStudentURL = `${baseURL}api/student/website-create-student`
+export const getPagesHeadersURL = `${baseURL}api/pages/website-get-pages-posts`;
+export const getInfoURL = `${baseURL}api/info/website-get-info`

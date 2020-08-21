@@ -3,6 +3,7 @@ import * as styles from './styles.module.css';
 import { faDollarSign} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ICourse } from '../../../Hooks/types';
+import { NavLink } from 'react-router-dom';
 interface IProps{
     course: ICourse;
 }
@@ -36,7 +37,9 @@ const SingleCourseCard: React.FC<IProps> = (props) =>{
                         
                         
                     </ul>
-                    <button className={course.course_type==='featured'?styles.default.featured_button:styles.default.regular_button}>Enroll Now</button>
+                    <NavLink to='/enroll' className={styles.default.navA}>
+                        <button className={course.course_type==='featured'?styles.default.featured_button:styles.default.regular_button}>Enroll Now</button>
+                    </NavLink>
                 </div>
             </div>
 

@@ -4,6 +4,7 @@ import { faTags , faComment , faArrowRight} from '@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IBlogPost } from '../../../../Hooks/types';
 import { convertDate } from '../..';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 interface IProps{
     blog: IBlogPost;
@@ -18,11 +19,29 @@ const SingleBlogCard: React.FC<IProps> = (props) =>{
     const handleInactive = () =>{
         setActive(false);
     }
+
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
+
     const date = convertDate(blog.createdAt)
     return (
+        <>
+            <Modal isOpen={modal} toggle={toggle} className={styles.default.modal}>
+                <ModalHeader toggle={toggle}>{blog.header}</ModalHeader>
+                <ModalBody>
+                    <div className={styles.default.blogCoverWrapper}>
+                        <img src={`api/blog/get-blog-post-cover-image/${blog._id}/view`} />
+                    </div>
+                    {blog.content_body}
+                </ModalBody>
+                <ModalFooter>
+                <Button color="#b09e80" onClick={toggle}>Close</Button>
+                </ModalFooter>
+            </Modal>
             <div className={`${styles.default.blog_card} ${styles.default.blog_card_blog}`} onMouseLeave={handleInactive} onMouseEnter={handleActive}>
                 <div className={`${styles.default.blog_card_image}`}>
-                    <img className={styles.default.img} src={` api/blog/get-blog-post-image/${blog._id}/view`} /> 
+                    <img className={styles.default.img} src={`api/blog/get-blog-post-image/${blog._id}/view`} /> 
                     <div className={`${styles.default.post_date} ${active?styles.default.post_date_active:styles.default.post_date_inactive}`}>{date}</div>
                 </div>
                 <div className={styles.default.content}>
@@ -36,11 +55,12 @@ const SingleBlogCard: React.FC<IProps> = (props) =>{
                             <a >{blog.header}</a>
                         </h4>
                         <p className={styles.default.blog_card_description}>{blog.post_content}</p>
-                        <button className={styles.default.readMore}>Read More  <FontAwesomeIcon icon={faArrowRight} /></button>
+                        <button className={styles.default.readMore} onClick={toggle}>Read More  <FontAwesomeIcon icon={faArrowRight} /></button>
                     </div>
                 </div>
 
             </div>
+        </>
 
     );
 }

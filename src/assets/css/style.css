@@ -13,3 +13,18 @@ body {
 .tip {
 	font-size: 1.4rem;
 }
+.modal-dialog {
+  max-width: 10240px;
+  margin: 1.75rem auto;
+}
+@media screen and (max-width:768px) {
+  .blog_card_blog {
+      margin: 0;
+      cursor: pointer;
+  }
+  .modal-dialog {
+      max-width: 600px;
+      margin: 1.75rem auto;
+  }
+}
+

@@ -2,11 +2,7 @@
     padding: 5rem;
     background-color: #f8f9fa !important;
 }
-@media screen and (max-width:768px) {
-    .wrapper{
-        padding: 3rem 0.5rem;
-    }
-}
+
 .headerWrapper{
     margin-bottom: 6rem;
     display: flex;
@@ -64,4 +60,13 @@
     line-height: 45px;
     font-weight: 600;
     color: #B09E80;
+}
+
+@media screen and (max-width:768px) {
+    .wrapper{
+        padding: 3rem 0.5rem;
+    }
+    .blogWrapper{
+        display: block;
+    }
 }
